@@ -4,5 +4,11 @@
   "main": "index.js",
   "repository": "https://github.com/Near-By-EV-Charging/evapi-nodejs.git",
   "author": "Sonu Kumar <skbhati199@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.17.2"
+  }
 }
