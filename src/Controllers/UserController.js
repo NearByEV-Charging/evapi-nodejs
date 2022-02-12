@@ -5,7 +5,7 @@ const bcrypt = require("bcryptjs");
 var common = require("../Modules/commonFunctions");
 var country = require("country-state-city").default;
 const jwt = require("jsonwebtoken");
-const config = require("../helpers/config");
+const config = require("../Helpers/config");
 exports.login = async(req,res)=>{
     try {
         let data = "this is login";
