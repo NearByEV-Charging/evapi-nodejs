@@ -6,6 +6,8 @@ const PORT = process.env.PORT || 5000
 app.use(express.static("public"));
 app.use(express.json());
 
+// app.use(require("./routes/api"));
+
 app.get("/", (req, res) => {
     res.json({status:"success", message:"Welcome to the API"});
 });
