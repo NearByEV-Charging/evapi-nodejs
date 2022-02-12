@@ -10,6 +10,7 @@ app.use(express.json());
 
 app.get("/", (req, res) => {
     res.json({status:"success", message:"Welcome to the API"});
+    console.log("chck pk ....")
 });
 
 
