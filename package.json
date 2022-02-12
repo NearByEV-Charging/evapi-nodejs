@@ -1,0 +1,8 @@
+{
+  "name": "evapi-nodejs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Near-By-EV-Charging/evapi-nodejs.git",
+  "author": "Sonu Kumar <skbhati199@gmail.com>",
+  "license": "MIT"
+}
