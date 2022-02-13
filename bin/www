@@ -83,10 +83,27 @@ function onError(error) {
  */
 
 function onListening() {
+  console.log(".env NODE_ENV: " + process.env.NODE_ENV);
   var addr = server.address();
+  if(process.env.NODE_ENV === 'test') {
+    console.log('Running Tests...');
+    setTimeout(function () {
+      try {
+        // Stop Server
+        process.exit(0);  //kill process
+      } catch (e) {
+        console.log('Tests are not valid:');
+        console.error(e);
+      }
+    }, 5000);
+  } else {
   var bind = typeof addr === 'string'
     ? 'pipe ' + addr
     : 'port ' + addr.port;
     console.log("EVAPI started at port ::: " + port)
 //   debug('Listening on ' + bind);
+  }
 }
+
+
+module.exports = server // Add for testing purposes
