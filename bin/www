@@ -83,9 +83,9 @@ function onError(error) {
  */
 
 function onListening() {
-  console.log(".env NODE_ENV: " + process.env.NODE_ENV);
   var addr = server.address();
   if(process.env.NODE_ENV === 'test') {
+    console.log(".env NODE_ENV: " + process.env.NODE_ENV);
     console.log('Running Tests...');
     setTimeout(function () {
       try {
