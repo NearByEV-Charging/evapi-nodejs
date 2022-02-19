@@ -6,5 +6,7 @@ var controller = require('../src/Controllers/UserController')
 router.get('/', function(req, res, next) {
   res.send('This is evapi user panel thanks !!');
 });
-router.get("/login", controller.login)
+router.post("/login", controller.login)
+router.post("/userSignup", controller.userSignup)
+router.post("/otpVerify",auth.userAuthentication, controller.verifyOtp)
 module.exports = router;
