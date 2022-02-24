@@ -1,5 +1,6 @@
-const { mongoose, } = require('../Services/mongooes');
-const UserSchema = mongoose.Schema({
+// const { mongoose, } = require('../Services/mongooes');
+const mongoose = require("mongoose");
+const UserSchema = new mongoose.Schema({
 
     mobileNumber: {
         type: String,
@@ -31,6 +32,7 @@ const UserSchema = mongoose.Schema({
     },
     gender: {
         type: String,
+        default: null
     },
     dob: {
         type: String,
@@ -38,14 +40,16 @@ const UserSchema = mongoose.Schema({
     },
     
     deviceToken: {
-        type: String
+        type: String,
+        default: null
     },
 
     deviceType: {
-        type: Number // 1 for android 2 for IOS
+        type: Number, // 1 for android 2 for IOS
+        default: null,
     },
 
-    access_token: {
+    accessToken: {
         type: String
     },
     createdOn: {
@@ -129,7 +133,7 @@ const UserSchema = mongoose.Schema({
             type: String,
             default:null
         },
-        ifscCcode:{
+        ifscCode:{
             type: String,
             default:null
         }
@@ -184,7 +188,7 @@ const UserSchema = mongoose.Schema({
         type: Number,
         default: 0 
     },
-    refferalcode: {
+    refferalCode: {
         type: String,
         unique:true,
         default: null 
@@ -198,8 +202,10 @@ const UserSchema = mongoose.Schema({
 }, {
     strict: true,
     collection: 'users',
-    versionKey: false
+    timestamps: true,
+    versionKey: false,
+    
 });
 UserSchema.index({ location: '2dsphere' })
 const UserModel = mongoose.model('users', UserSchema);
-module.exports = { UserModel }
+module.exports =  UserModel 
